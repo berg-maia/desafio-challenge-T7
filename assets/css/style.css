@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Variáveis de cor */
+:root {
+    --cor-de-fundo: #E5E5E5;
+    --cor-principal: #0A3871;
+    --cor-hover-um: #0056b3;
+    --cor-hover-dois: #BCC6D4;
+    --tamanho-fonte-base: 16px;
+}
+
+/* Estilos globais */
+* {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: var(--cor-principal);
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-de-fundo);
+    display: flex;
+    padding: 0.625rem 1.25rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo */
+.logoAlura {
+    max-height: 3.125rem;
+}
+
+/* Conteúdo principal */
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 6.25rem);
+    width: 100%;
+    margin-top: 3.125rem;
+}
+
+/* Seções esquerda e direita */
+.esquerda, .direita {
+    background-color: var(--cor-de-fundo);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1.25rem;
+    position: relative;
+}
+
+.esquerda {
+    flex: 3;
+}
+
+.direita {
+    flex: 2;
+}
+
+/* Seção geral */
+.secao {
+    padding: 2.5rem;
+    overflow: auto;
+}
+
+/* Mensagem */
+.mensagem {
+    background-color: var(--cor-de-fundo);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    width: 100%;
+    height: calc(100% - 2.5rem);
+    max-width: 42.375rem;
+}
+
+.mensagem__texto {
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-principal);
+    border: none;
+    font-size: 2rem;
+    text-transform: lowercase;
+    margin-top: 20%;
+    resize: none;
+    width: 100%;
+    height: 100%;
+}
+
+.mensagem__texto:focus {
+    outline: none;
+}
+
+.mensagem__informacao {
+    font-size: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+/* Resposta */
+.resposta {
+    background-color: white;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.25rem;
+    position: absolute;
+    left: 1.25rem;
+    top: 1.25rem;
+    width: 100%;
+    height: calc(100% - 2.5rem);
+    max-width: 25rem;
+    box-shadow: 0 1.5rem 2rem 0.5rem rgba(0, 0, 0, 0.08);
+    align-items: center;
+}
+
+.resposta__texto {
+    color: var(--cor-principal);
+    font-size: 1.5rem;
+    resize: none;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border: none;
+    height: 100%;
+}
+
+.resposta__texto:focus {
+    outline: none;
+}
+
+.resposta__alerta {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.resposta__subtexto {
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Botões */
+.conteudo__botao {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.btn {
+    width: 20.5rem;
+    height: 4.1875rem;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.estilo-um {
+    background-color: var(--cor-principal);
+    border: 1px solid var(--cor-principal);
+    color: white;
+}
+
+.estilo-um:hover {
+    background-color: var(--cor-hover-um);
+}
+
+.estilo-dois {
+    background-color: #D8DFE8;
+    border: 1px solid var(--cor-principal);
+    color: var(--cor-principal);
+}
+
+.estilo-dois:hover {
+    background-color: var(--cor-hover-dois);
+}
+
+/* Controla a visibilidade dos itens */
+.visivel {
+    display: block;
+}
+
+.escondido {
+    display: none;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-principal);
+    text-align: center;
+    padding: 0.75rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--cor-principal);
+    font-size: 0.875rem;
+}
+
+.rodape p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Estilos responsivos */
+@media (max-width: 48rem) {
+    .conteudo {
+        flex-direction: column;
+    }
+
+    .esquerda, .direita {
+        flex: 1 1 auto;
+        align-items: stretch;
+        justify-content: center;
+        margin: 0;
+        padding: 0 0.5rem;
+    }
+
+    .mensagem, .resposta {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        position: static;
+        margin: 0.5rem 0;
+        padding: 0.5rem 1rem;
+    }
+
+    .mensagem__texto {
+        margin-top: 10%;
+    }
+
+    .conteudo__botao {
+        width: 100%;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .resultado_img {
+        display: none;
+    }
+
+    .rodape {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 25rem) {
+    .cabecalho {
+        padding: 0.5rem 1rem;
+    }
+
+    .logoAlura {
+        max-height: 2.5rem;
+    }
+
+    .conteudo {
+        height: auto;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    textarea {
+        min-height: 22rem;
+        width: calc(100% - 1rem);
+        box-sizing: border-box;
+    }
+
+    .esquerda, .direita {
+        flex: 1 1 auto;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .esquerda {
+        gap: 0.5rem;
+    }
+
+    .mensagem, .resposta {
+        padding: 0.5rem;
+        border-radius: 1rem;
+        width: calc(100% - 1rem);
+        box-sizing: border-box;
+    }
+
+    .mensagem__texto, .resposta__texto {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .mensagem__texto {
+        margin-top: 30%;
+    }
+
+    .direita p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .conteudo__botao {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .btn {
+        font-size: 0.875rem;
+        height: 3.5rem;
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    .rodape {
+        font-size: 0.6875rem;
+        padding: 0.25rem;
+    }
+}

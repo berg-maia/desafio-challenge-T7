@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Encriptador</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="logoAlura" src="./assets/images/logoAlura.png" alt="Logo da Alura">
+    </header>
+    <main class="conteudo">
+        <section class="esquerda">
+            <div class="secao mensagem">
+                <textarea class="mensagem__texto" cols="41" rows="4" maxlength="300" placeholder="Digite seu texto"></textarea>
+
+                <div class="mensagem__informacao">
+                    <img src="./assets/images/exclamation-circle.png" alt="símbolo de exclamação">
+                    <span>Apenas letras minúsculas e sem acento.</span>
+                </div>
+
+                <div class="conteudo__botao">
+                    <button onclick="btnEncriptar()" class="btn estilo-um">Criptografar</button>
+                    <button onclick="btnDesencriptar()" class="btn estilo-dois">Descriptografar</button>
+                </div>
+            </div>
+        </section>
+        <section class="direita">
+            <div class="secao resposta">
+                <textarea class="resposta__texto escondido" cols="20" rows="9" readonly></textarea>
+                <img src="./assets/images/boneco.png" alt="imagem de um personagem segurando uma lupa" class="resultado_img visivel">
+                <p class="resposta__alerta visivel">Nenhuma mensagem encontrada</p>
+                <p class="resposta__subtexto visivel">Digite um texto que você deseja criptografar ou descriptografar.</p>
+                
+                <div class="conteudo__botao escondido" id="btn-copiar">
+                    <button onclick="btnCopiar()" class="btn estilo-dois">Copiar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+<footer class="rodape">
+    <p>Challenge ONE Decodificador de texto - Turma T7</p>
+</footer>
+</html>
